@@ -4,6 +4,7 @@ import Shelf from './Shelf'
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom'
 import List from './List'
+import Search from './Search'
 
 
 class BooksApp extends React.Component {

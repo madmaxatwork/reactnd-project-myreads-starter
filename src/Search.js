@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Search extends React.Component {
     render() {
-        const booksList;
         return (
             <div className="search-books">
               <div className="search-books-bar">
@@ -25,10 +25,11 @@ class Search extends React.Component {
               </div>
               <div className="search-books-results">
                 <ol className="books-grid">
-                  {booksList}
                 </ol>
               </div>
             </div>
           );
     }
 }
+
+export default Search;
