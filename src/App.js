@@ -70,8 +70,8 @@ class BooksApp extends React.Component {
             <List books={this.state.books} onShelfUpdate={this.shelfUpdate} />
           )} />
           <Route path='/search' render={() => (
-            <Search />
-          )} />
+            <Search books={this.state.books} onShelfUpdate={this.shelfUpdate} />
+            )} />
         </div>
       </BrowserRouter>
     )

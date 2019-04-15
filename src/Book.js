@@ -54,7 +54,6 @@ Sample Book Payload
   */
 
 class Book extends React.Component {
-
   // Book state
   state = {
     value: this.props.book.shelf ? this.props.book.shelf : 'none'
@@ -66,8 +65,8 @@ class Book extends React.Component {
   }
 
   render() {
-    // Get the authors
-    const authors = this.props.book.authors
+    // Get the authors. Authors can be null 
+    const authors = this.props.book.authors ? this.props.book.authors : [] 
     // Get the Thumbnail
     const thumbnail = this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail ? this.props.book.imageLinks.thumbnail : this.props.book.imageLinks.smallThumbnail : ''
     const authorsList = authors.map((author) => {
