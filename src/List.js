@@ -6,9 +6,9 @@ const List = (props) => {
 
   // Different List Types available
   const FILTERCATEGORIES = [
-    { filterType: 'CurrentlyReading', filterText: 'Currently Reading' },
-    { filterType: 'WantToRead', filterText: 'Want to Read' },
-    { filterType: 'Read', filterText: 'Read' }
+    { filter: 'currentlyReading', text: 'Currently Reading' },
+    { filter: 'wantToRead', text: 'Want to Read' },
+    { filter: 'read', text: 'Read' }
   ]
 
   // Returns the filtered Books
@@ -18,13 +18,13 @@ const List = (props) => {
     })
   }
 
- // Creates a Shelf based on the Category
+  // Creates a Shelf based on the Category
   const list = FILTERCATEGORIES.map((category) => {
     return (
       <Shelf
-        key={category.filterType}
-        title={category.filterText}
-        books={filter(props.books, category.filterType)}
+        key={category.filter}
+        title={category.text}
+        books={filter(props.books, category.filter)}
         onShelfUpdate={props.onShelfUpdate} />
     )
   })

@@ -1,18 +1,26 @@
-import React from 'react';
-import Book from './Book';
+import React from 'react'
+import Book from './Book'
 
- function Shelf(props) {
+const Shelf = (props) => {
+  const booksList = props.books.length === 0 ?
+    <li key='empty'>Empty Result</li> : props.books.map((book) => {
+      return (
+        <li key={book.id}>
+          <Book book={book} onShelfUpdate={props.onShelfUpdate} />
+        </li>
+      )
+    })
+
   return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">{props.title}</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
-          <li>
-            <Book />
-          </li>
+          {booksList}
         </ol>
       </div>
     </div>
-  );
+  )
 }
- export default Shelf;
+
+export default Shelf
