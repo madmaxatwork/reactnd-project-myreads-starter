@@ -23,6 +23,7 @@ class BooksApp extends React.Component {
     this.retrieveAllBooks();
   }
 
+
   // This will get all the required books. Can be extended 
   retrieveAllBooks() {
     BooksAPI.getAll()
@@ -33,15 +34,15 @@ class BooksApp extends React.Component {
   render() {
     return (
       <BrowserRouter>
-      <div className='app'>
-        <Route exact path='/' render={() => (
-          <List />
-        )} />
-        <Route path='/search' render={() => (
+        <div className='app'>
+          <Route exact path='/' render={() => (
+            <List books={this.state.books} />
+          )} />
+          <Route path='/search' render={() => (
             <Search />
           )} />
-      </div>
-    </BrowserRouter>
+        </div>
+      </BrowserRouter>
     )
   }
 }
