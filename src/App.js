@@ -36,6 +36,9 @@ class BooksApp extends React.Component {
         <Route exact path='/' render={() => (
           <List />
         )} />
+        <Route path='/search' render={() => (
+            <Search />
+          )} />
       </div>
     </BrowserRouter>
     )
