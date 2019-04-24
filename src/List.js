@@ -11,20 +11,15 @@ const List = (props) => {
     { filter: 'read', text: 'Read' }
   ]
 
-  // Returns the filtered Books
-  const filter = (books, filterType) => {
-    return books.filter((book) => {
-      return book.shelf === filterType
-    })
-  }
-
   // Creates a Shelf based on the Category
   const list = FILTERCATEGORIES.map((category) => {
     return (
       <Shelf
         key={category.filter}
         title={category.text}
-        books={filter(props.books, category.filter)}
+        books={props.books.filter(book => (
+           book.shelf === category.filter
+        ))}
         onShelfUpdate={props.onShelfUpdate} />
     )
   })
