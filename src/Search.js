@@ -10,9 +10,10 @@ class Search extends React.Component {
     searchResults: [],
   };
 
-  searchBooks(){
-    BooksAPI.search(this.state.value, 10)
+  searchBooks() {
+    BooksAPI.search(this.state.value)
       .then(searchResults => {
+        // This is to keep the same state across all the pages
         const results = searchResults.map(result => {
           const index = this.props.books.find(book => {
             return book.id === result.id;
@@ -31,7 +32,6 @@ class Search extends React.Component {
         });
       })
       .catch(() => {
-        alert("No Books found")
         this.setState({
           searchResults: [],
         });
