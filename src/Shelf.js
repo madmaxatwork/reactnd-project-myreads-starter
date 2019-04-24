@@ -2,14 +2,13 @@ import React from 'react'
 import Book from './Book'
 
 const Shelf = (props) => {
-  const booksList = props.books.length === 0 ?
-    <li key='empty'>Empty Result</li> : props.books.map((book) => {
-      return (
-        <li key={book.id}>
-          <Book book={book} onShelfUpdate={props.onShelfUpdate} />
-        </li>
-      )
-    })
+  const booksList = props.books.length === 0
+    ? <li key='empty'>Empty Result</li>
+    : props.books.map(book => (
+      <li key={book.id}>
+        <Book book={book} onShelfUpdate={props.onShelfUpdate} />
+      </li>
+    ))
 
   return (
     <div className="bookshelf">

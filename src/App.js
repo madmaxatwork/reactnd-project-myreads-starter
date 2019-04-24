@@ -39,14 +39,11 @@ class BooksApp extends React.Component {
     const bookIndex = this.state.books.indexOf(book)
 
     if (shelf === 'none') {
-      console.log('shelf = none')
       currentBooksState.splice(bookIndex, 1)
     } else if (book.shelf === 'none') {
-      console.log('book.shelf = none')
       const updatedBook = { ...book, shelf }
       currentBooksState.push(updatedBook)
     } else {
-      console.log('in else')
       const updatedBook = { ...book, shelf }
       currentBooksState[bookIndex] = updatedBook
     }
