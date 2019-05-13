@@ -50,7 +50,7 @@ class Search extends React.Component {
         value: event.target.value,
       },
       () => {
-        if (this.value !== '') {
+        if (this.state.value !== '') {
           this.searchBooks();
         } else {
           this.setState({
@@ -96,7 +96,7 @@ class Search extends React.Component {
         {
             this.state.showSpinner 
             ? <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            : "null"
+            : null
           }  
       </div>
     );
